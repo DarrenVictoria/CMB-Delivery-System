@@ -1,4 +1,5 @@
 ﻿using CMB_Delivery_Management;
+using CMB_Delivery_Management.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Splash_Screen
         public SplashScreen()
         {
             InitializeComponent();
+            Instances.SplashInstance = this;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
