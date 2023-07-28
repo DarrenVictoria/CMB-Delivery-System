@@ -26,5 +26,10 @@ namespace CMB_Delivery_Management
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
