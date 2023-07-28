@@ -36,15 +36,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DashboardLogOut = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.AddDelivery = new System.Windows.Forms.Button();
+            this.ViewDelivery = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -162,19 +162,19 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Dashboard";
             // 
-            // button5
+            // DashboardLogOut
             // 
-            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1049, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 49);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Log Out";
-            this.button5.UseVisualStyleBackColor = false;
+            this.DashboardLogOut.BackColor = System.Drawing.Color.RoyalBlue;
+            this.DashboardLogOut.FlatAppearance.BorderSize = 0;
+            this.DashboardLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DashboardLogOut.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DashboardLogOut.ForeColor = System.Drawing.Color.White;
+            this.DashboardLogOut.Location = new System.Drawing.Point(1049, 12);
+            this.DashboardLogOut.Name = "DashboardLogOut";
+            this.DashboardLogOut.Size = new System.Drawing.Size(121, 49);
+            this.DashboardLogOut.TabIndex = 8;
+            this.DashboardLogOut.Text = "Log Out";
+            this.DashboardLogOut.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -242,34 +242,34 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Active Drivers";
             // 
-            // button6
+            // AddDelivery
             // 
-            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(422, 260);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(254, 49);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Add delivery";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.AddDelivery.BackColor = System.Drawing.Color.RoyalBlue;
+            this.AddDelivery.FlatAppearance.BorderSize = 0;
+            this.AddDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddDelivery.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddDelivery.ForeColor = System.Drawing.Color.White;
+            this.AddDelivery.Location = new System.Drawing.Point(422, 260);
+            this.AddDelivery.Name = "AddDelivery";
+            this.AddDelivery.Size = new System.Drawing.Size(254, 49);
+            this.AddDelivery.TabIndex = 11;
+            this.AddDelivery.Text = "Add delivery";
+            this.AddDelivery.UseVisualStyleBackColor = false;
+            this.AddDelivery.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // ViewDelivery
             // 
-            this.button7.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(741, 260);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(254, 49);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "View deliveries";
-            this.button7.UseVisualStyleBackColor = false;
+            this.ViewDelivery.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ViewDelivery.FlatAppearance.BorderSize = 0;
+            this.ViewDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ViewDelivery.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewDelivery.ForeColor = System.Drawing.Color.White;
+            this.ViewDelivery.Location = new System.Drawing.Point(741, 260);
+            this.ViewDelivery.Name = "ViewDelivery";
+            this.ViewDelivery.Size = new System.Drawing.Size(254, 49);
+            this.ViewDelivery.TabIndex = 12;
+            this.ViewDelivery.Text = "View deliveries";
+            this.ViewDelivery.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -285,11 +285,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 653);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.ViewDelivery);
+            this.Controls.Add(this.AddDelivery);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.DashboardLogOut);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
@@ -311,15 +311,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DashboardLogOut;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button AddDelivery;
+        private System.Windows.Forms.Button ViewDelivery;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;

@@ -65,11 +65,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DriverLogout = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ActiveDriver = new System.Windows.Forms.Button();
+            this.BusyDriver = new System.Windows.Forms.Button();
+            this.InactiveDriver = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel10.SuspendLayout();
@@ -521,20 +521,20 @@
             this.label19.TabIndex = 23;
             this.label19.Text = "Delivery 5";
             // 
-            // button5
+            // DriverLogout
             // 
-            this.button5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(935, 14);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(121, 38);
-            this.button5.TabIndex = 20;
-            this.button5.Text = "Log Out";
-            this.button5.UseVisualStyleBackColor = false;
+            this.DriverLogout.BackColor = System.Drawing.Color.RoyalBlue;
+            this.DriverLogout.FlatAppearance.BorderSize = 0;
+            this.DriverLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DriverLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DriverLogout.ForeColor = System.Drawing.Color.White;
+            this.DriverLogout.Location = new System.Drawing.Point(935, 14);
+            this.DriverLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DriverLogout.Name = "DriverLogout";
+            this.DriverLogout.Size = new System.Drawing.Size(121, 38);
+            this.DriverLogout.TabIndex = 20;
+            this.DriverLogout.Text = "Log Out";
+            this.DriverLogout.UseVisualStyleBackColor = false;
             // 
             // label8
             // 
@@ -548,52 +548,52 @@
             this.label8.Text = "Driver Status";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // button2
+            // ActiveDriver
             // 
-            this.button2.Location = new System.Drawing.Point(505, 511);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Active";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.ActiveDriver.Location = new System.Drawing.Point(505, 511);
+            this.ActiveDriver.Margin = new System.Windows.Forms.Padding(4);
+            this.ActiveDriver.Name = "ActiveDriver";
+            this.ActiveDriver.Size = new System.Drawing.Size(100, 28);
+            this.ActiveDriver.TabIndex = 22;
+            this.ActiveDriver.Text = "Active";
+            this.ActiveDriver.UseVisualStyleBackColor = true;
+            this.ActiveDriver.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // BusyDriver
             // 
-            this.button3.Location = new System.Drawing.Point(651, 511);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Busy";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BusyDriver.Location = new System.Drawing.Point(651, 511);
+            this.BusyDriver.Margin = new System.Windows.Forms.Padding(4);
+            this.BusyDriver.Name = "BusyDriver";
+            this.BusyDriver.Size = new System.Drawing.Size(100, 28);
+            this.BusyDriver.TabIndex = 23;
+            this.BusyDriver.Text = "Busy";
+            this.BusyDriver.UseVisualStyleBackColor = true;
+            this.BusyDriver.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // InactiveDriver
             // 
-            this.button4.Location = new System.Drawing.Point(793, 511);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
-            this.button4.TabIndex = 24;
-            this.button4.Text = "Inactive";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.InactiveDriver.Location = new System.Drawing.Point(793, 511);
+            this.InactiveDriver.Margin = new System.Windows.Forms.Padding(4);
+            this.InactiveDriver.Name = "InactiveDriver";
+            this.InactiveDriver.Size = new System.Drawing.Size(100, 28);
+            this.InactiveDriver.TabIndex = 24;
+            this.InactiveDriver.Text = "Inactive";
+            this.InactiveDriver.UseVisualStyleBackColor = true;
+            this.InactiveDriver.Click += new System.EventHandler(this.button4_Click);
             // 
             // Driverdelivery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1084, 582);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.InactiveDriver);
+            this.Controls.Add(this.BusyDriver);
+            this.Controls.Add(this.ActiveDriver);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.DriverLogout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Driverdelivery";
             this.Text = "Driverdelivery";
             this.panel8.ResumeLayout(false);
@@ -663,11 +663,11 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button DriverLogout;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ActiveDriver;
+        private System.Windows.Forms.Button BusyDriver;
+        private System.Windows.Forms.Button InactiveDriver;
         private System.Windows.Forms.Label label1;
     }
 }
