@@ -17,25 +17,24 @@ namespace CMB_Delivery_Management
             InitializeComponent();
         }
 
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            Drivers objdriverpage = new Drivers();
+            objdriverpage.Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             DeliveryForm form = new DeliveryForm();
             form.Show();
+            this.Hide();
+        }
+
+        private void DashboardLogOut_Click(object sender, EventArgs e)
+        {
+            LoginAdmin objLogOutAdmin = new LoginAdmin();
+            objLogOutAdmin.Show();
             this.Hide();
         }
     }

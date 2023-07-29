@@ -5,19 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using CMB_Delivery_Management.Converters;
 
 namespace CMB_Delivery_Management.Model
 {
     internal class DAO
     {
-        internal static String ConnectionString { get; set; }
-        internal static SqlConnection Connection { get; set; }
-
-        internal DAO() 
-        {
-            ConnectionString = $"Data Source={Server.Name};Initial Catalog=BaggageDeliverySystem;Integrated Security=True";
-            Connection = new SqlConnection(ConnectionString) ;
-        }
+        internal static String ConnectionString { get; set; } = $"Data Source={Server.Name};Initial Catalog=BaggageDeliverySystem;Integrated Security=True";
+        
 
         internal static bool VerifyUser(String username, String passwordHash, AccountType type)
         {
@@ -25,15 +20,26 @@ namespace CMB_Delivery_Management.Model
 
             try
             {
-                using (Connection)
+                SqlConnection Connection;
+                
+                using (Connection = new SqlConnection(ConnectionString))
                 {
-                    
-                    String ValidationQueury = "SELECT * FROM User WHERE username=@uname";
-                    SqlCommand ValidationCommand = new SqlCommand(ValidationQueury);
-                    ValidationCommand.Parameters.AddWithValue("@uname", username);
+                    String ValidationQueury = "";
+
+                    if (type == AccountType.Admin)
+                    {
+                        ValidationQueury = "SELECT * FROM UAdmin WHERE username=@uname";
+                    }
+                    else
+                    {
+                        ValidationQueury = "SELECT * FROM Driver WHERE username=@uname";
+                    }
 
                     if (Connection.State == System.Data.ConnectionState.Closed)
-                        Connection.Open();
+                    Connection.Open();
+                    SqlCommand ValidationCommand = new SqlCommand(ValidationQueury, Connection);
+                    ValidationCommand.Parameters.AddWithValue("@uname", username);
+
 
                     SqlDataReader ValidationData = ValidationCommand.ExecuteReader();
 
@@ -48,23 +54,46 @@ namespace CMB_Delivery_Management.Model
 
                     while (ValidationData.Read())
                     {
-                        User tempUser = new User();
-                        tempUser.username = username;
-                        tempUser.passwordHash = ValidationData.GetString(1);
-                        tempUser.type = User.ParseAccountType(ValidationData.GetString(2));
 
-                        if (passwordHash.Equals(tempUser.passwordHash)
-                            && type.Equals(tempUser.type))
+                        if (type == AccountType.Admin)
                         {
-                            Instances.LoggedUser = tempUser;
+                            Admin tempUser = new Admin();
+                            tempUser.username = username;
+                            tempUser.passwordHash = ValidationData.GetString(1).Trim();
 
-                            if (Connection.State == System.Data.ConnectionState.Open)
+                            if (passwordHash.Equals(tempUser.passwordHash))
                             {
-                                Connection.Close();
-                            }
+                                Instances.LoggedUser = tempUser;
+                                Instances.LoggedUserAccountType = AccountType.Admin;
 
-                            return false;
+                                if (Connection.State == System.Data.ConnectionState.Open)
+                                {
+                                    Connection.Close();
+                                }
+
+                                return true;
+                            }
                         }
+                        else
+                        {
+                            Driver tempUser = new Driver();
+                            tempUser.driverid = ValidationData.GetInt32(0);
+                            tempUser.username = username;
+
+                            tempUser.passwordHash = ValidationData.GetString(2).Trim();
+                            if (passwordHash.Equals(tempUser.passwordHash))
+                            {
+                                Instances.LoggedUser = tempUser;
+                                Instances.LoggedUserAccountType = AccountType.Driver;
+
+                                if (Connection.State == System.Data.ConnectionState.Open)
+                                {
+                                    Connection.Close();
+                                }
+
+                                return true;
+                            }
+                        }   
 
                         if (Connection.State == System.Data.ConnectionState.Open)
                         {
@@ -79,13 +108,6 @@ namespace CMB_Delivery_Management.Model
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                if (Connection.State == System.Data.ConnectionState.Open)
-                {
-                    Connection.Close();
-                }
             }
 
             return false;
