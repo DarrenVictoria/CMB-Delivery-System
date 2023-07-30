@@ -120,7 +120,7 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(470, 22);
             this.tb_username.TabIndex = 9;
-            this.tb_username.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            
             // 
             // b_login
             // 
@@ -135,6 +135,7 @@
             this.b_login.TabIndex = 8;
             this.b_login.Text = "Login";
             this.b_login.UseVisualStyleBackColor = false;
+            this.b_login.Click += new System.EventHandler(this.b_login_Click);
             // 
             // LoginAdmin
             // 
@@ -152,7 +153,6 @@
             this.Controls.Add(this.label1);
             this.Name = "LoginAdmin";
             this.Text = "LoginAdmin";
-            this.Load += new System.EventHandler(this.LoginAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

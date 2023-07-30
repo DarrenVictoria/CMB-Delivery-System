@@ -1,10 +1,11 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CMB_Delivery_Management.Model
+namespace CMB_Delivery_Management.Converters
 {
     public enum AccountType
     {
@@ -12,13 +13,8 @@ namespace CMB_Delivery_Management.Model
         Driver,
         None
     }
-
-    internal class User
+    internal static class AccountTypeConverter
     {
-        public string username { get; set; }
-        public string passwordHash { get; set; }
-        public AccountType type { get; set; }
-
         internal static AccountType ParseAccountType(string value)
         {
             switch (value)
@@ -29,6 +25,4 @@ namespace CMB_Delivery_Management.Model
             }
         }
     }
-
-    
 }

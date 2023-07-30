@@ -175,6 +175,7 @@
             this.DashboardLogOut.TabIndex = 8;
             this.DashboardLogOut.Text = "Log Out";
             this.DashboardLogOut.UseVisualStyleBackColor = false;
+            this.DashboardLogOut.Click += new System.EventHandler(this.DashboardLogOut_Click);
             // 
             // panel3
             // 
@@ -294,7 +295,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
