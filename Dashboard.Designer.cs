@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,9 +49,12 @@
             this.AddDelivery = new System.Windows.Forms.Button();
             this.ViewDelivery = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.DeliveryStatusChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeliveryStatusChart)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -183,7 +189,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(422, 102);
+            this.panel3.Location = new System.Drawing.Point(372, 112);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 132);
             this.panel3.TabIndex = 9;
@@ -216,10 +222,11 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label4);
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(741, 102);
+            this.panel4.Location = new System.Drawing.Point(372, 356);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(254, 132);
             this.panel4.TabIndex = 10;
+            
             // 
             // label3
             // 
@@ -248,11 +255,11 @@
             this.AddDelivery.BackColor = System.Drawing.Color.RoyalBlue;
             this.AddDelivery.FlatAppearance.BorderSize = 0;
             this.AddDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddDelivery.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddDelivery.ForeColor = System.Drawing.Color.White;
-            this.AddDelivery.Location = new System.Drawing.Point(422, 260);
+            this.AddDelivery.Location = new System.Drawing.Point(404, 269);
             this.AddDelivery.Name = "AddDelivery";
-            this.AddDelivery.Size = new System.Drawing.Size(254, 49);
+            this.AddDelivery.Size = new System.Drawing.Size(180, 44);
             this.AddDelivery.TabIndex = 11;
             this.AddDelivery.Text = "Add delivery";
             this.AddDelivery.UseVisualStyleBackColor = false;
@@ -263,21 +270,40 @@
             this.ViewDelivery.BackColor = System.Drawing.Color.RoyalBlue;
             this.ViewDelivery.FlatAppearance.BorderSize = 0;
             this.ViewDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewDelivery.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ViewDelivery.ForeColor = System.Drawing.Color.White;
-            this.ViewDelivery.Location = new System.Drawing.Point(741, 260);
+            this.ViewDelivery.Location = new System.Drawing.Point(404, 531);
             this.ViewDelivery.Name = "ViewDelivery";
-            this.ViewDelivery.Size = new System.Drawing.Size(254, 49);
+            this.ViewDelivery.Size = new System.Drawing.Size(180, 44);
             this.ViewDelivery.TabIndex = 12;
-            this.ViewDelivery.Text = "View deliveries";
+            this.ViewDelivery.Text = "View deliveries\r\n";
             this.ViewDelivery.UseVisualStyleBackColor = false;
+            this.ViewDelivery.Click += new System.EventHandler(this.ViewDelivery_Click);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(318, 348);
+            this.panel2.Controls.Add(this.DeliveryStatusChart);
+            this.panel2.Location = new System.Drawing.Point(693, 94);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(862, 305);
+            this.panel2.Size = new System.Drawing.Size(454, 481);
             this.panel2.TabIndex = 13;
+            // 
+            // DeliveryStatusChart
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.DeliveryStatusChart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.DeliveryStatusChart.Legends.Add(legend2);
+            this.DeliveryStatusChart.Location = new System.Drawing.Point(0, 0);
+            this.DeliveryStatusChart.Name = "DeliveryStatusChart";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "DeliveryStatusChart";
+            this.DeliveryStatusChart.Series.Add(series2);
+            this.DeliveryStatusChart.Size = new System.Drawing.Size(454, 481);
+            this.DeliveryStatusChart.TabIndex = 0;
+            this.DeliveryStatusChart.Text = "chart1";
             // 
             // Dashboard
             // 
@@ -295,12 +321,15 @@
             this.Controls.Add(this.panel1);
             this.Name = "Dashboard";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DeliveryStatusChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -326,6 +355,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart DeliveryStatusChart;
     }
 }
 
