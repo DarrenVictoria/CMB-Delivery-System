@@ -96,6 +96,12 @@
     <Compile Include="Driver_details.designer.cs">
       <DependentUpon>Driver_details.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditDeliveries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditDeliveries.designer.cs">
+      <DependentUpon>EditDeliveries.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Hashing.cs" />
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
@@ -113,6 +119,12 @@
     <Compile Include="Model\Instances.cs" />
     <Compile Include="Model\Server.cs" />
     <Compile Include="Model\Admin.cs" />
+    <Compile Include="PendingDeliveries.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingDeliveries.designer.cs">
+      <DependentUpon>PendingDeliveries.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,11 +157,17 @@
     <EmbeddedResource Include="Driver_details.resx">
       <DependentUpon>Driver_details.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditDeliveries.resx">
+      <DependentUpon>EditDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginUser.resx">
       <DependentUpon>LoginUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingDeliveries.resx">
+      <DependentUpon>PendingDeliveries.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
