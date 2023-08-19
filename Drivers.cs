@@ -173,5 +173,10 @@ namespace CMB_Delivery_Management
         {
             DeleteSelectedRow();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
