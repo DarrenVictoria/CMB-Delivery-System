@@ -88,8 +88,14 @@ namespace CMB_Delivery_Management
 
         private void ViewDelivery_Click(object sender, EventArgs e)
         {
-            
+            PendingDeliveries objPdeliveries = new PendingDeliveries();
+            objPdeliveries.Show();
+            this.Hide();
         }
 
+        private void DeliveryStatusChart_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

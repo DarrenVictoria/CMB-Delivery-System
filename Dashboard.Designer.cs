@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -226,7 +226,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(254, 132);
             this.panel4.TabIndex = 10;
-            
             // 
             // label3
             // 
@@ -290,20 +289,21 @@
             // 
             // DeliveryStatusChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.DeliveryStatusChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.DeliveryStatusChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.DeliveryStatusChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.DeliveryStatusChart.Legends.Add(legend1);
             this.DeliveryStatusChart.Location = new System.Drawing.Point(0, 0);
             this.DeliveryStatusChart.Name = "DeliveryStatusChart";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "DeliveryStatusChart";
-            this.DeliveryStatusChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "DeliveryStatusChart";
+            this.DeliveryStatusChart.Series.Add(series1);
             this.DeliveryStatusChart.Size = new System.Drawing.Size(454, 481);
             this.DeliveryStatusChart.TabIndex = 0;
             this.DeliveryStatusChart.Text = "chart1";
+            this.DeliveryStatusChart.Click += new System.EventHandler(this.DeliveryStatusChart_Click);
             // 
             // Dashboard
             // 
