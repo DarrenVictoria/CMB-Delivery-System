@@ -25,13 +25,13 @@ namespace CMB_Delivery_Management
             DataTable dt = new DataTable();
 
             con.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT dstatus FROM newdelivery", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT DeliveryStatus FROM DeliveryInfo", con);
             da.Fill(dt);
             con.Close();
 
             
-            int pendingCount = CountStatus(dt, "dstatus", "Pending");
-            int completedCount = CountStatus(dt, "dstatus", "Completed");
+            int pendingCount = CountStatus(dt, "DeliveryStatus", "Pending");
+            int completedCount = CountStatus(dt, "DeliveryStatus", "Completed");
 
             
             DeliveryStatusChart.Series.Clear();
