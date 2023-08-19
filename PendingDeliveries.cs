@@ -45,5 +45,12 @@ namespace CMB_Delivery_Management
             editobj.Show();
             this.Hide();
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Dashboard objdashboard = new Dashboard();
+            objdashboard.Show();
+            this.Hide();
+        }
     }
 }
