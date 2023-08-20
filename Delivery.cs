@@ -56,5 +56,49 @@ namespace CMB_Delivery_Management
         {
 
         }
+
+        private void lable3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void ConfirmOrder_Click(object sender, EventArgs e)
+        {
+            // Calculate 25% of the maximum value of the progress bar
+            int progressBarValue = (int)(progressBar1.Maximum * 0.25);     
+            // Set the progress bar value
+            progressBar1.Value = progressBarValue;
+
+        }
+
+        private void BaggagePickUp_Click(object sender, EventArgs e)
+        {
+            // Calculate 25% of the maximum value of the progress bar
+            int progressBarValue = (int)(progressBar1.Maximum * 0.50);
+            // Set the progress bar value
+            progressBar1.Value = progressBarValue;
+        }
+
+        private void OnGoingDelivery_Click(object sender, EventArgs e)
+        {
+            // Calculate 25% of the maximum value of the progress bar
+            int progressBarValue = (int)(progressBar1.Maximum * 0.75);
+            // Set the progress bar value
+            progressBar1.Value = progressBarValue;
+        }
+        private void SuccessDelivery_Click(object sender, EventArgs e)
+        {
+            // Calculate 25% of the maximum value of the progress bar
+            int progressBarValue = (int)(progressBar1.Maximum * 1.0);
+            // Set the progress bar value
+            progressBar1.Value = progressBarValue;
+        }
     }
 }

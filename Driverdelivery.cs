@@ -51,5 +51,15 @@ namespace CMB_Delivery_Management
         {
             throw new NotImplementedException();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
