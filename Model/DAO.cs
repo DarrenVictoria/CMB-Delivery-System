@@ -77,7 +77,7 @@ namespace CMB_Delivery_Management.Model
                         else
                         {
                             Driver tempUser = new Driver();
-                            tempUser.driverid = ValidationData.GetInt32(0);
+                            tempUser.DriverId = ValidationData.GetInt32(0);
                             tempUser.username = username;
 
                             tempUser.passwordHash = ValidationData.GetString(2).Trim();

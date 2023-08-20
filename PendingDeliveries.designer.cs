@@ -72,21 +72,16 @@ namespace CMB_Delivery_Management
             this.label22 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.panel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DriverIDName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddressName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescriptionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PickupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryStName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +102,7 @@ namespace CMB_Delivery_Management
             // 
             this.button3.AllowDrop = true;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(496, 21);
+            this.button3.Location = new System.Drawing.Point(307, 474);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 36);
@@ -570,11 +565,108 @@ namespace CMB_Delivery_Management
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DeliveryName,
+            this.DriverIDName,
+            this.AddressName,
+            this.ContactName,
+            this.DescriptionName,
+            this.PickupName,
+            this.DeliveryStName});
+            this.dataGridView1.Location = new System.Drawing.Point(42, 77);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(931, 375);
+            this.dataGridView1.TabIndex = 33;
+            // 
+            // DeliveryName
+            // 
+            this.DeliveryName.HeaderText = "DeliveryID";
+            this.DeliveryName.MinimumWidth = 6;
+            this.DeliveryName.Name = "DeliveryName";
+            this.DeliveryName.Width = 125;
+            // 
+            // DriverIDName
+            // 
+            this.DriverIDName.HeaderText = "DriverID";
+            this.DriverIDName.MinimumWidth = 6;
+            this.DriverIDName.Name = "DriverIDName";
+            this.DriverIDName.Width = 125;
+            // 
+            // AddressName
+            // 
+            this.AddressName.HeaderText = "Address";
+            this.AddressName.MinimumWidth = 6;
+            this.AddressName.Name = "AddressName";
+            this.AddressName.Width = 125;
+            // 
+            // ContactName
+            // 
+            this.ContactName.HeaderText = "Contact";
+            this.ContactName.MinimumWidth = 6;
+            this.ContactName.Name = "ContactName";
+            this.ContactName.Width = 125;
+            // 
+            // DescriptionName
+            // 
+            this.DescriptionName.HeaderText = "Description";
+            this.DescriptionName.MinimumWidth = 6;
+            this.DescriptionName.Name = "DescriptionName";
+            this.DescriptionName.Width = 125;
+            // 
+            // PickupName
+            // 
+            this.PickupName.HeaderText = "PickupStatus";
+            this.PickupName.MinimumWidth = 6;
+            this.PickupName.Name = "PickupName";
+            this.PickupName.Width = 125;
+            // 
+            // DeliveryStName
+            // 
+            this.DeliveryStName.HeaderText = "DeliveryStatus";
+            this.DeliveryStName.MinimumWidth = 6;
+            this.DeliveryStName.Name = "DeliveryStName";
+            this.DeliveryStName.Width = 125;
+            // 
+            // button1
+            // 
+            this.button1.AllowDrop = true;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(42, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 36);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.AllowDrop = true;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(512, 474);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 36);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // PendingDeliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 533);
+            this.ClientSize = new System.Drawing.Size(1015, 533);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.panel2);
             this.Name = "PendingDeliveries";
@@ -650,5 +742,15 @@ namespace CMB_Delivery_Management
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DriverIDName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AddressName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ContactName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PickupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryStName;
+        private System.Windows.Forms.Button button2;
     }
 }
