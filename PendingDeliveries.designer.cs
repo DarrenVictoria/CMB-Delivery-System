@@ -191,7 +191,7 @@ namespace CMB_Delivery_Management
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(966, 12);
+            this.pictureBox7.Location = new System.Drawing.Point(957, 12);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(46, 41);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;

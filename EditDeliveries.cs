@@ -21,5 +21,15 @@ namespace CMB_Delivery_Management
         {
             this.Close();
         }
+
+        private void Header_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
