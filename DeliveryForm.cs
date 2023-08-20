@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -145,11 +147,65 @@ namespace CMB_Delivery_Management
 
         }
 
+
+        private bool CheckDeliveryExists(string BaggageId)
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True"))
+            {
+                connection.Open();
+
+                string query = $"SELECT COUNT(*) FROM DeliveryInfo WHERE deliveryid = '{BaggageId}'";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+
         private void button3_Click(object sender, EventArgs e)
         {
+            string BaggageId = Baggage.Text;
+
+            bool deliveryExists = CheckDeliveryExists(BaggageId);
+
+            if (deliveryExists)
+            {
+                MessageBox.Show("A driver with the same ID already exists.");
+                return;
+            }
+
+
+            
+            string Add = Address.Text;
+            int ContactNo = int.Parse(contact.Text);
+            string Desc = description.Text;
+            int DriverId = 7;
+
+            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            connection.Open();
+
+
+            string query = $"INSERT INTO DeliveryInfo (DeliveryID,DriverID,Address,Contact,Description) VALUES ('{BaggageId}','{DriverId}' ,'{Add}','{ContactNo}','{Desc}')";
+            SqlCommand command = new SqlCommand(query, connection);
+
+            int rowsAffected = command.ExecuteNonQuery();
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("New Delivery added successfully.");
+            }
+            else
+            {
+                MessageBox.Show("Insertion failed.");
+            }
+
+            connection.Close();
+        
+
             status.ForeColor = Color.Black;
             status.BackColor = Color.DarkSeaGreen;
             status.Text = "STATUS : SUBMITTED";
+
         }
 
         private void label9_Click(object sender, EventArgs e)
