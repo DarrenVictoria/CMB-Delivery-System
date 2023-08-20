@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -177,6 +178,17 @@ namespace CMB_Delivery_Management
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+       
+            UpdateDriver objupdatedr = new UpdateDriver();
+            int RowIndex = dataGridView1.SelectedRows[0].Index;
+            string DriverId = dataGridView1.Rows[RowIndex].Cells[0].Value.ToString();  
+            //Debug.WriteLine(DriverId);
+            objupdatedr.SelectDriver(int.Parse(DriverId));
+            objupdatedr.Show();
         }
     }
 }

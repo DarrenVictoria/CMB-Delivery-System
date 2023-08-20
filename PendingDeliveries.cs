@@ -87,5 +87,61 @@ namespace CMB_Delivery_Management
         {
             LoadDeliveryData();
         }
+
+        private void DeleteSelectedRow()
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                string deliveryId = selectedRow.Cells["DeliveryName"].Value.ToString();
+
+
+                dataGridView1.Rows.Remove(selectedRow);
+
+
+                DeleteDriverFromDatabase(deliveryId);
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to delete.");
+            }
+        }
+
+
+        private void DeleteDriverFromDatabase(string deliveryId)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            try
+            {
+                connection.Open();
+
+                string query = "DELETE FROM DeliveryInfo WHERE DeliveryID = @DeliveryID";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@DeliveryID", deliveryId);
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Delivery information deleted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Deletion failed.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            DeleteSelectedRow();
+        }
     }
 }

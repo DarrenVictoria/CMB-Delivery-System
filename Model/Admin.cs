@@ -16,12 +16,18 @@ namespace CMB_Delivery_Management.Model
 
     }
 
-    internal class Driver
+    public class Driver
     {
         public string username { get; set; }
         public string passwordHash { get; set; }
-        public int driverid { get; set; }
+        public int DriverId { get; set; }
 
+        public string Driver_name { get; set; } 
+
+        public string Driver_DateJoined { get; set; }   
+        public int Driver_age { get; set; }
+
+        public string Driver_Status { get; set; }   
     }
 
 

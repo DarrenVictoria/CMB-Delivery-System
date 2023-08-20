@@ -34,7 +34,6 @@ namespace CMB_Delivery_Management
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.DeliveryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DriverIDName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +41,8 @@ namespace CMB_Delivery_Management
             this.DescriptionName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PickupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryStName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +51,7 @@ namespace CMB_Delivery_Management
             // 
             this.button3.AllowDrop = true;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(443, 474);
+            this.button3.Location = new System.Drawing.Point(307, 474);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 36);
@@ -99,19 +100,6 @@ namespace CMB_Delivery_Management
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(931, 375);
             this.dataGridView1.TabIndex = 33;
-            // 
-            // button1
-            // 
-            this.button1.AllowDrop = true;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(42, 28);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 36);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // DeliveryName
             // 
@@ -162,11 +150,38 @@ namespace CMB_Delivery_Management
             this.DeliveryStName.Name = "DeliveryStName";
             this.DeliveryStName.Width = 125;
             // 
+            // button1
+            // 
+            this.button1.AllowDrop = true;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(42, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 36);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.AllowDrop = true;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(512, 474);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 36);
+            this.button2.TabIndex = 35;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // PendingDeliveries
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 533);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
@@ -195,5 +210,6 @@ namespace CMB_Delivery_Management
         private System.Windows.Forms.DataGridViewTextBoxColumn DescriptionName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PickupName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DeliveryStName;
+        private System.Windows.Forms.Button button2;
     }
 }
