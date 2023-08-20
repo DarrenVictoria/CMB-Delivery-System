@@ -63,6 +63,16 @@ namespace CMB_Delivery_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1159615_accept_checkmark_circle_yes_check_icon__3__1920w {
+            get {
+                object obj = ResourceManager.GetObject("1159615_accept_checkmark_circle_yes_check_icon+(3)-1920w", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2176602 {
             get {
                 object obj = ResourceManager.GetObject("2176602", resourceCulture);
@@ -163,6 +173,16 @@ namespace CMB_Delivery_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ICON_Paid_Leave_600x600 {
+            get {
+                object obj = ResourceManager.GetObject("ICON-Paid-Leave-600x600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap istockphoto_1406267431_170667a {
             get {
                 object obj = ResourceManager.GetObject("istockphoto-1406267431-170667a", resourceCulture);
@@ -206,6 +226,26 @@ namespace CMB_Delivery_Management.Properties {
         internal static System.Drawing.Bitmap logo_white_waifu2x_photo_noise3__1_ {
             get {
                 object obj = ResourceManager.GetObject("logo-white_waifu2x_photo_noise3 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP {
+            get {
+                object obj = ResourceManager.GetObject("OIP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP__1_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

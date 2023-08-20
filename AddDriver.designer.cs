@@ -47,11 +47,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(181, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 32);
+            this.label1.Size = new System.Drawing.Size(179, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Driver ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -68,8 +68,8 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.OrangeRed;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.BackColor = System.Drawing.Color.Crimson;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(476, 12);
             this.button3.Name = "button3";
@@ -82,67 +82,67 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(31, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 29);
+            this.label2.Size = new System.Drawing.Size(103, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Driver ID :";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(31, 233);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 29);
+            this.label3.Size = new System.Drawing.Size(144, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Driver Name :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(31, 299);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(221, 29);
+            this.label4.Size = new System.Drawing.Size(206, 23);
             this.label4.TabIndex = 4;
             this.label4.Text = "Employment Date  :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(31, 362);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(138, 29);
+            this.label5.Size = new System.Drawing.Size(124, 23);
             this.label5.TabIndex = 5;
             this.label5.Text = "Driver Age :";
             // 
             // DriverId
             // 
-            this.DriverId.Location = new System.Drawing.Point(155, 175);
+            this.DriverId.Location = new System.Drawing.Point(140, 171);
             this.DriverId.Name = "DriverId";
-            this.DriverId.Size = new System.Drawing.Size(346, 22);
+            this.DriverId.Size = new System.Drawing.Size(353, 22);
             this.DriverId.TabIndex = 6;
             // 
             // DriverName
             // 
-            this.DriverName.Location = new System.Drawing.Point(189, 240);
+            this.DriverName.Location = new System.Drawing.Point(181, 236);
             this.DriverName.Name = "DriverName";
             this.DriverName.Size = new System.Drawing.Size(312, 22);
             this.DriverName.TabIndex = 7;
             // 
             // Driver_DateJoined
             // 
-            this.Driver_DateJoined.Location = new System.Drawing.Point(258, 306);
+            this.Driver_DateJoined.Location = new System.Drawing.Point(243, 302);
             this.Driver_DateJoined.Name = "Driver_DateJoined";
-            this.Driver_DateJoined.Size = new System.Drawing.Size(243, 22);
+            this.Driver_DateJoined.Size = new System.Drawing.Size(250, 22);
             this.Driver_DateJoined.TabIndex = 8;
             // 
             // DriverAge
             // 
-            this.DriverAge.Location = new System.Drawing.Point(169, 369);
+            this.DriverAge.Location = new System.Drawing.Point(161, 365);
             this.DriverAge.Name = "DriverAge";
             this.DriverAge.Size = new System.Drawing.Size(332, 22);
             this.DriverAge.TabIndex = 9;
@@ -150,7 +150,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(99, 461);
             this.button1.Name = "button1";
@@ -162,8 +162,8 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.OrangeRed;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.BackColor = System.Drawing.Color.Crimson;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(281, 461);
             this.button2.Name = "button2";
@@ -189,6 +189,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddDriver";
             this.Text = "AddDriver";
             this.Load += new System.EventHandler(this.AddDriver_Load);

@@ -239,14 +239,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(93, 33);
+            this.label5.Location = new System.Drawing.Point(116, 32);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 39);
+            this.label5.Size = new System.Drawing.Size(112, 40);
             this.label5.TabIndex = 4;
             this.label5.Text = "Driver";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // button1
             // 
@@ -255,21 +256,22 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 209);
+            this.button1.Location = new System.Drawing.Point(0, 257);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(312, 68);
+            this.button1.Size = new System.Drawing.Size(309, 68);
             this.button1.TabIndex = 0;
             this.button1.Text = "Dashboard";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.flowLayoutPanel1);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(369, 75);
+            this.panel2.Location = new System.Drawing.Point(372, 71);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(687, 377);
@@ -528,7 +530,7 @@
             this.DriverLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DriverLogout.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DriverLogout.ForeColor = System.Drawing.Color.White;
-            this.DriverLogout.Location = new System.Drawing.Point(935, 14);
+            this.DriverLogout.Location = new System.Drawing.Point(938, 10);
             this.DriverLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DriverLogout.Name = "DriverLogout";
             this.DriverLogout.Size = new System.Drawing.Size(121, 38);
@@ -539,46 +541,55 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(616, 478);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(617, 460);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(137, 25);
+            this.label8.Size = new System.Drawing.Size(162, 29);
             this.label8.TabIndex = 21;
             this.label8.Text = "Driver Status";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // ActiveDriver
             // 
-            this.ActiveDriver.Location = new System.Drawing.Point(505, 511);
+            this.ActiveDriver.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ActiveDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActiveDriver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ActiveDriver.Location = new System.Drawing.Point(507, 511);
             this.ActiveDriver.Margin = new System.Windows.Forms.Padding(4);
             this.ActiveDriver.Name = "ActiveDriver";
-            this.ActiveDriver.Size = new System.Drawing.Size(100, 28);
+            this.ActiveDriver.Size = new System.Drawing.Size(100, 40);
             this.ActiveDriver.TabIndex = 22;
             this.ActiveDriver.Text = "Active";
-            this.ActiveDriver.UseVisualStyleBackColor = true;
+            this.ActiveDriver.UseVisualStyleBackColor = false;
             this.ActiveDriver.Click += new System.EventHandler(this.button2_Click);
             // 
             // BusyDriver
             // 
+            this.BusyDriver.BackColor = System.Drawing.Color.RoyalBlue;
+            this.BusyDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusyDriver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BusyDriver.Location = new System.Drawing.Point(651, 511);
             this.BusyDriver.Margin = new System.Windows.Forms.Padding(4);
             this.BusyDriver.Name = "BusyDriver";
-            this.BusyDriver.Size = new System.Drawing.Size(100, 28);
+            this.BusyDriver.Size = new System.Drawing.Size(100, 40);
             this.BusyDriver.TabIndex = 23;
             this.BusyDriver.Text = "Busy";
-            this.BusyDriver.UseVisualStyleBackColor = true;
+            this.BusyDriver.UseVisualStyleBackColor = false;
             this.BusyDriver.Click += new System.EventHandler(this.button3_Click);
             // 
             // InactiveDriver
             // 
+            this.InactiveDriver.BackColor = System.Drawing.Color.RoyalBlue;
+            this.InactiveDriver.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InactiveDriver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.InactiveDriver.Location = new System.Drawing.Point(793, 511);
             this.InactiveDriver.Margin = new System.Windows.Forms.Padding(4);
             this.InactiveDriver.Name = "InactiveDriver";
-            this.InactiveDriver.Size = new System.Drawing.Size(100, 28);
+            this.InactiveDriver.Size = new System.Drawing.Size(100, 40);
             this.InactiveDriver.TabIndex = 24;
             this.InactiveDriver.Text = "Inactive";
-            this.InactiveDriver.UseVisualStyleBackColor = true;
+            this.InactiveDriver.UseVisualStyleBackColor = false;
             this.InactiveDriver.Click += new System.EventHandler(this.button4_Click);
             // 
             // Driverdelivery

@@ -41,10 +41,10 @@
             // 
             // b_forgotpassword
             // 
-            this.b_forgotpassword.BackColor = System.Drawing.Color.White;
+            this.b_forgotpassword.BackColor = System.Drawing.SystemColors.Control;
             this.b_forgotpassword.FlatAppearance.BorderSize = 0;
             this.b_forgotpassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_forgotpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_forgotpassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_forgotpassword.ForeColor = System.Drawing.Color.RoyalBlue;
             this.b_forgotpassword.Location = new System.Drawing.Point(306, 429);
             this.b_forgotpassword.Name = "b_forgotpassword";
@@ -56,10 +56,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(47, 280);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
+            this.label3.Size = new System.Drawing.Size(88, 21);
             this.label3.TabIndex = 22;
             this.label3.Text = "Password";
             // 
@@ -75,19 +75,20 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(46, 216);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
+            this.label4.Size = new System.Drawing.Size(93, 21);
             this.label4.TabIndex = 20;
             this.label4.Text = "Username";
             // 
             // cb_rememberme
             // 
             this.cb_rememberme.AutoSize = true;
+            this.cb_rememberme.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_rememberme.Location = new System.Drawing.Point(51, 439);
             this.cb_rememberme.Name = "cb_rememberme";
-            this.cb_rememberme.Size = new System.Drawing.Size(119, 20);
+            this.cb_rememberme.Size = new System.Drawing.Size(153, 25);
             this.cb_rememberme.TabIndex = 19;
             this.cb_rememberme.Text = "Remember me";
             this.cb_rememberme.UseVisualStyleBackColor = true;
@@ -99,14 +100,13 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(452, 22);
             this.tb_username.TabIndex = 18;
-           
             // 
             // b_login
             // 
             this.b_login.BackColor = System.Drawing.Color.RoyalBlue;
             this.b_login.FlatAppearance.BorderSize = 0;
             this.b_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.b_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.b_login.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_login.ForeColor = System.Drawing.Color.White;
             this.b_login.Location = new System.Drawing.Point(127, 524);
             this.b_login.Name = "b_login";
@@ -119,25 +119,23 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(232, 108);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(250, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 36);
+            this.label2.Size = new System.Drawing.Size(78, 37);
             this.label2.TabIndex = 16;
             this.label2.Text = "User";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(45, 72);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(487, 36);
+            this.label1.Size = new System.Drawing.Size(535, 37);
             this.label1.TabIndex = 15;
             this.label1.Text = "Welcome to CMB Baggage Delivery";
-           
             // 
             // LoginUser
             // 

@@ -138,5 +138,10 @@ namespace CMB_Delivery_Management
             description.Text = SelectedDelivery.Description;
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
