@@ -165,7 +165,7 @@
             this.Header.BackColor = System.Drawing.SystemColors.Control;
             this.Header.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Header.Font = new System.Drawing.Font("Copperplate Gothic Light", 15F);
-            this.Header.Location = new System.Drawing.Point(312, 0);
+            this.Header.Location = new System.Drawing.Point(318, 0);
             this.Header.Name = "Header";
             this.Header.Size = new System.Drawing.Size(870, 72);
             this.Header.TabIndex = 4;

@@ -143,5 +143,20 @@ namespace CMB_Delivery_Management
         {
             DeleteSelectedRow();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            UpdateDelivery objupdatedelivery = new UpdateDelivery();
+            int RowIndex = dataGridView1.SelectedRows[0].Index;
+            string DeliveryId = dataGridView1.Rows[RowIndex].Cells[0].Value.ToString();
+            //Debug.WriteLine(DriverId);
+            objupdatedelivery.SelectDelivery(int.Parse(DeliveryId));
+            objupdatedelivery.Show();
+        }
     }
 }
