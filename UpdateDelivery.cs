@@ -60,8 +60,10 @@ namespace CMB_Delivery_Management
                     connection.Close();
 
                 }
+                
+                MessageBox.Show($"Error: {ex.Message}", "Error");
 
-            }
+        }
 
         }
 

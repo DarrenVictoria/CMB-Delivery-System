@@ -27,50 +27,57 @@ namespace CMB_Delivery_Management
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            orderid.Text = SelecedtedDeliveryId.ToString();
-
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
+            try
             {
-                connection.Open();
+                orderid.Text = SelecedtedDeliveryId.ToString();
 
-                string selectStatusQuery = "SELECT PickupStatus, DeliveryStatus,ConfirmOrder,OngoingDelivery FROM DeliveryInfo WHERE DeliveryId = @DeliveryId";
-                SqlCommand selectCommand = new SqlCommand(selectStatusQuery, connection);
-                selectCommand.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-                using (SqlDataReader reader = selectCommand.ExecuteReader())
                 {
-                    if (reader.Read())
+                    connection.Open();
+
+                    string selectStatusQuery = "SELECT PickupStatus, DeliveryStatus,ConfirmOrder,OngoingDelivery FROM DeliveryInfo WHERE DeliveryId = @DeliveryId";
+                    SqlCommand selectCommand = new SqlCommand(selectStatusQuery, connection);
+                    selectCommand.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
-                        string pickupStatus = reader["PickupStatus"].ToString();
-                        string deliveryStatus = reader["DeliveryStatus"].ToString();
-                        string confirmorder = reader["ConfirmOrder"].ToString();
-                        string ongoingdelivery = reader["OngoingDelivery"].ToString();
-                        
-                        if(deliveryStatus == "Successfull")
+                        if (reader.Read())
                         {
-                            progressBar1.Value = progressBar1.Maximum;
-                        }
-                        else if (ongoingdelivery == "Ongoing")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.75);
-                        }
-                        else if (pickupStatus == "Baggage Picked Up")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.50);
-                        }
-                        else if (confirmorder == "Confirmed")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.25);
-                        }
-                        else
-                        {
-                            progressBar1.Value = 0; 
+                            string pickupStatus = reader["PickupStatus"].ToString();
+                            string deliveryStatus = reader["DeliveryStatus"].ToString();
+                            string confirmorder = reader["ConfirmOrder"].ToString();
+                            string ongoingdelivery = reader["OngoingDelivery"].ToString();
+
+                            if (deliveryStatus == "Successfull")
+                            {
+                                progressBar1.Value = progressBar1.Maximum;
+                            }
+                            else if (ongoingdelivery == "Ongoing")
+                            {
+                                progressBar1.Value = (int)(progressBar1.Maximum * 0.75);
+                            }
+                            else if (pickupStatus == "Baggage Picked Up")
+                            {
+                                progressBar1.Value = (int)(progressBar1.Maximum * 0.50);
+                            }
+                            else if (confirmorder == "Confirmed")
+                            {
+                                progressBar1.Value = (int)(progressBar1.Maximum * 0.25);
+                            }
+                            else
+                            {
+                                progressBar1.Value = 0;
+                            }
                         }
                     }
-                }
 
-                connection.Close();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
             }
         }
 
@@ -78,104 +85,131 @@ namespace CMB_Delivery_Management
 
         private void ConfirmOrder_Click(object sender, EventArgs e)
         {
-            // Calculate 25% of the maximum value of the progress bar
-            int progressBarValue = (int)(progressBar1.Maximum * 0.25);     
-            // Set the progress bar value
-            progressBar1.Value = progressBarValue;
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            string updateStatus = "UPDATE DeliveryInfo SET ConfirmOrder = 'Confirmed' WHERE DeliveryId = @DeliveryId";
-            SqlCommand command = new SqlCommand(updateStatus, connection);
-            command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
-            connection.Open();
-            int rowsAffected = command.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Delivery information updated successfully.");
-            }
-            else
-            {
-                MessageBox.Show("Update failed.");
-            }
+                // Calculate 25% of the maximum value of the progress bar
+                int progressBarValue = (int)(progressBar1.Maximum * 0.25);
+                // Set the progress bar value
+                progressBar1.Value = progressBarValue;
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            connection.Close();
+                string updateStatus = "UPDATE DeliveryInfo SET ConfirmOrder = 'Confirmed' WHERE DeliveryId = @DeliveryId";
+                SqlCommand command = new SqlCommand(updateStatus, connection);
+                command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Delivery information updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Update failed.");
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
 
         }
 
         private void BaggagePickUp_Click(object sender, EventArgs e)
         {
-            // Calculate 25% of the maximum value of the progress bar
-            int progressBarValue = (int)(progressBar1.Maximum * 0.50);
-            // Set the progress bar value
-            progressBar1.Value = progressBarValue;
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            string updateStatus = "UPDATE DeliveryInfo SET PickupStatus = 'Baggage Picked Up' WHERE DeliveryId = @DeliveryId";
-            SqlCommand command = new SqlCommand(updateStatus, connection);
-            command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
-            connection.Open();
-            int rowsAffected = command.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Delivery information updated successfully.");
+                // Calculate 25% of the maximum value of the progress bar
+                int progressBarValue = (int)(progressBar1.Maximum * 0.50);
+                // Set the progress bar value
+                progressBar1.Value = progressBarValue;
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+
+                string updateStatus = "UPDATE DeliveryInfo SET PickupStatus = 'Baggage Picked Up' WHERE DeliveryId = @DeliveryId";
+                SqlCommand command = new SqlCommand(updateStatus, connection);
+                command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Delivery information updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Update failed.");
+                }
+
+                connection.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Update failed.");
-            }   
-
-            connection.Close();
-
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void OnGoingDelivery_Click(object sender, EventArgs e)
         {
-            // Calculate 25% of the maximum value of the progress bar
-            int progressBarValue = (int)(progressBar1.Maximum * 0.75);
-            // Set the progress bar value
-            progressBar1.Value = progressBarValue;
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-           
-            string updateStatus = "UPDATE DeliveryInfo SET OngoingDelivery = 'Ongoing' WHERE DeliveryId = @DeliveryId";
-            SqlCommand command = new SqlCommand(updateStatus, connection);
-            command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
-            connection.Open();
-            int rowsAffected = command.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Delivery information updated successfully.");
-            }
-            else
-            {
-                MessageBox.Show("Update failed.");
-            }
+                // Calculate 25% of the maximum value of the progress bar
+                int progressBarValue = (int)(progressBar1.Maximum * 0.75);
+                // Set the progress bar value
+                progressBar1.Value = progressBarValue;
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            connection.Close();
+                string updateStatus = "UPDATE DeliveryInfo SET OngoingDelivery = 'Ongoing' WHERE DeliveryId = @DeliveryId";
+                SqlCommand command = new SqlCommand(updateStatus, connection);
+                command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Delivery information updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Update failed.");
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
         private void SuccessDelivery_Click(object sender, EventArgs e)
         {
-            // Calculate 25% of the maximum value of the progress bar
-            int progressBarValue = (int)(progressBar1.Maximum * 1.0);
-            // Set the progress bar value
-            progressBar1.Value = progressBarValue;
-
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            string updateStatus = "UPDATE DeliveryInfo SET DeliveryStatus = 'Successfull' WHERE DeliveryId = @DeliveryId";
-            SqlCommand command = new SqlCommand(updateStatus, connection);
-            command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
-            connection.Open();
-            int rowsAffected = command.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            try
             {
-                MessageBox.Show("Delivery information updated successfully.");
-            }
-            else
-            {
-                MessageBox.Show("Update failed.");
-            }
+                // Calculate 25% of the maximum value of the progress bar
+                int progressBarValue = (int)(progressBar1.Maximum * 1.0);
+                // Set the progress bar value
+                progressBar1.Value = progressBarValue;
 
-            connection.Close();
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+
+                string updateStatus = "UPDATE DeliveryInfo SET DeliveryStatus = 'Successfull' WHERE DeliveryId = @DeliveryId";
+                SqlCommand command = new SqlCommand(updateStatus, connection);
+                command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Delivery information updated successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Update failed.");
+                }
+
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)

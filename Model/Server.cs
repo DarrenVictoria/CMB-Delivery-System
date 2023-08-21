@@ -8,6 +8,6 @@ namespace CMB_Delivery_Management.Model
 {
     internal static class Server
     { 
-        internal static String Name { get; set; } = "TOASTER1\\MSSQLSERVER05";
+        internal static String Name { get; set; } = "TECXICK-LAPTOP";
     }
 }

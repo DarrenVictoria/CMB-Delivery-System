@@ -73,21 +73,28 @@ namespace CMB_Delivery_Management
 
         private void LoadDriverData()
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            SqlCommand command = new SqlCommand("SELECT * FROM DriverCred", connection);
-
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            dataGridView1.Rows.Clear();
-            while (reader.Read())
+            try
             {
-                dataGridView1.Rows.Add(reader["DriverId"], reader["Driver_name"], reader["Driver_DateJoined"], reader["Driver_age"], reader["Driver_Status"]);
-            }
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            reader.Close();
-            connection.Close(); 
+                SqlCommand command = new SqlCommand("SELECT * FROM DriverCred", connection);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                dataGridView1.Rows.Clear();
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["DriverId"], reader["Driver_name"], reader["Driver_DateJoined"], reader["Driver_age"], reader["Driver_Status"]);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void AddDriver_Click(object sender, EventArgs e)
@@ -168,13 +175,19 @@ namespace CMB_Delivery_Management
 
         private void button6_Click(object sender, EventArgs e)
         {
-       
-            UpdateDriver objupdatedr = new UpdateDriver();
-            int RowIndex = dataGridView1.SelectedRows[0].Index;
-            string DriverId = dataGridView1.Rows[RowIndex].Cells[0].Value.ToString();  
-            //Debug.WriteLine(DriverId);
-            objupdatedr.SelectDriver(int.Parse(DriverId));
-            objupdatedr.Show();
+            try
+            {
+                UpdateDriver objupdatedr = new UpdateDriver();
+                int RowIndex = dataGridView1.SelectedRows[0].Index;
+                string DriverId = dataGridView1.Rows[RowIndex].Cells[0].Value.ToString();
+                //Debug.WriteLine(DriverId);
+                objupdatedr.SelectDriver(int.Parse(DriverId));
+                objupdatedr.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

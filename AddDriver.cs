@@ -27,24 +27,33 @@ namespace CMB_Delivery_Management
         private void button2_Click(object sender, EventArgs e)
         {
             DriverId.Text = "";
-            DriverName.Text = "";   
+            DriverName.Text = "";
             Driver_DateJoined.Text = "";
-            DriverAge.Text = "";    
+            DriverAge.Text = "";
         }
 
         private bool CheckDriverExists(string driverId)
         {
-
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            try
             {
-                connection.Open();
 
-                string query = $"SELECT COUNT(*) FROM DriverCred WHERE DriverId = '{driverId}'";
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                {
+                    connection.Open();
 
-                int count = (int)command.ExecuteScalar();
-                return count > 0;
+                    string query = $"SELECT COUNT(*) FROM DriverCred WHERE DriverId = '{driverId}'";
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
+
+            return false;
         }
 
 
@@ -53,24 +62,26 @@ namespace CMB_Delivery_Management
         {
             string Did = DriverId.Text;
 
-            bool driverExists = CheckDriverExists(Did);
-
-            if (driverExists)
+            try
             {
-                MessageBox.Show("A driver with the same ID already exists.");
-                return;
-            }
+                bool driverExists = CheckDriverExists(Did);
+
+                if (driverExists)
+                {
+                    MessageBox.Show("A driver with the same ID already exists.");
+                    return;
+                }
 
 
-            string DName = DriverName.Text; 
+                string DName = DriverName.Text;
                 string Date = Driver_DateJoined.Text;
                 string Age = DriverAge.Text;
 
                 SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-                
+
                 connection.Open();
 
-                
+
                 string query = $"INSERT INTO DriverCred (DriverId,Driver_name,Driver_DateJoined,Driver_age) VALUES ('{Did}', '{DName}','{Date}','{Age}')";
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -86,6 +97,12 @@ namespace CMB_Delivery_Management
 
                 connection.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
+
 
         }
+    }
 }

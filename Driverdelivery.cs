@@ -36,23 +36,30 @@ namespace CMB_Delivery_Management
 
         public void LoadDeliveryData(string driverusername)
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo WHERE DriverID = (SELECT DriverID FROM Driver WHERE username = @username)", connection);
-            command.Parameters.AddWithValue("@username", driverusername);
-
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            dataGridView1.Rows.Clear();
-
-            while (reader.Read())
+            try
             {
-                dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["ConfirmOrder"], reader["PickupStatus"], reader["OngoingDelivery"], reader["DeliveryStatus"]);
-            }
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            reader.Close();
-            connection.Close();
+                SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo WHERE DriverID = (SELECT DriverID FROM Driver WHERE username = @username)", connection);
+                command.Parameters.AddWithValue("@username", driverusername);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                dataGridView1.Rows.Clear();
+
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["ConfirmOrder"], reader["PickupStatus"], reader["OngoingDelivery"], reader["DeliveryStatus"]);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void Driverdelivery_Load(object sender, EventArgs e)

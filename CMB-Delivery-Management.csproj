@@ -122,6 +122,8 @@
       <DependentUpon>LoginUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DAO.cs" />
+    <Compile Include="Model\Delivery.cs" />
+    <Compile Include="Model\Driver.cs" />
     <Compile Include="Model\Instances.cs" />
     <Compile Include="Model\Server.cs" />
     <Compile Include="Model\Admin.cs" />

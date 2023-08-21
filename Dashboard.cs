@@ -22,65 +22,86 @@ namespace CMB_Delivery_Management
 
         void UpdateOngoingCountLabel()
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM DeliveryInfo WHERE OngoingDelivery = 'Ongoing'", connection);
-            int ongoingCount = (int)cmd.ExecuteScalar();
-            connection.Close();
+            try
+            {
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM DeliveryInfo WHERE OngoingDelivery = 'Ongoing'", connection);
+                int ongoingCount = (int)cmd.ExecuteScalar();
+                connection.Close();
 
-            label2.Text = ongoingCount.ToString();
+                label2.Text = ongoingCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         void UpdateTotalDriversLabel()
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM DriverCred", connection);
-            int driverCount = (int)cmd.ExecuteScalar();
-            connection.Close();
+            try
+            {
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                connection.Open();
+                SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM DriverCred", connection);
+                int driverCount = (int)cmd.ExecuteScalar();
+                connection.Close();
 
-            drivercount.Text = driverCount.ToString();
+                drivercount.Text = driverCount.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         void FillChart()
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-     
-            DataTable dt = new DataTable();
-
-            connection.Open();
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ConfirmOrder,PickupStatus,OngoingDelivery,DeliveryStatus FROM DeliveryInfo", connection);
-            da.Fill(dt);
-            connection.Close();
-
-
-            //int pendingCount = CountStatus(dt, "DeliveryStatus", "Pending");
-            //int completedCount = CountStatus(dt, "DeliveryStatus", "Completed");
-            int orderConfirmCount = CountStatus(dt, "ConfirmOrder", "Confirmed");
-            int pickupStatusCount = CountStatus(dt, "PickupStatus", "Baggage Picked Up");
-            int ongoingDeliveryCount = CountStatus(dt, "OngoingDelivery", "Ongoing");
-            int deliveryStatusCount = CountStatus(dt, "DeliveryStatus", "Successfull");
-
-
-            DeliveryStatusChart.Series.Clear();
-            Series series = new Series
+            try
             {
-                Name = "Status",
-                IsVisibleInLegend = true,
-                ChartType = SeriesChartType.Pie
-            };
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            series.Points.AddXY("Order Confirm", orderConfirmCount);
-            series.Points.AddXY("Pickup Status", pickupStatusCount);
-            series.Points.AddXY("Ongoing Delivery", ongoingDeliveryCount);
-            series.Points.AddXY("Delivery Status", deliveryStatusCount);
+                DataTable dt = new DataTable();
 
-
-            series["PieLabelStyle"] = "Disabled";
+                connection.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT ConfirmOrder,PickupStatus,OngoingDelivery,DeliveryStatus FROM DeliveryInfo", connection);
+                da.Fill(dt);
+                connection.Close();
 
 
-            DeliveryStatusChart.Series.Add(series);
-            DeliveryStatusChart.Titles.Add("Delivery Status");
+                //int pendingCount = CountStatus(dt, "DeliveryStatus", "Pending");
+                //int completedCount = CountStatus(dt, "DeliveryStatus", "Completed");
+                int orderConfirmCount = CountStatus(dt, "ConfirmOrder", "Confirmed");
+                int pickupStatusCount = CountStatus(dt, "PickupStatus", "Baggage Picked Up");
+                int ongoingDeliveryCount = CountStatus(dt, "OngoingDelivery", "Ongoing");
+                int deliveryStatusCount = CountStatus(dt, "DeliveryStatus", "Successfull");
+
+
+                DeliveryStatusChart.Series.Clear();
+                Series series = new Series
+                {
+                    Name = "Status",
+                    IsVisibleInLegend = true,
+                    ChartType = SeriesChartType.Pie
+                };
+
+                series.Points.AddXY("Order Confirm", orderConfirmCount);
+                series.Points.AddXY("Pickup Status", pickupStatusCount);
+                series.Points.AddXY("Ongoing Delivery", ongoingDeliveryCount);
+                series.Points.AddXY("Delivery Status", deliveryStatusCount);
+
+
+                series["PieLabelStyle"] = "Disabled";
+
+
+                DeliveryStatusChart.Series.Add(series);
+                DeliveryStatusChart.Titles.Add("Delivery Status");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private int CountStatus(DataTable data, string columnName, string status)

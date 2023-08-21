@@ -49,22 +49,29 @@ namespace CMB_Delivery_Management
 
         private void LoadDeliveryData()
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo", connection);
-
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader();
-
-            dataGridView1.Rows.Clear();
-
-            while (reader.Read())
+            try
             {
-                dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["ConfirmOrder"], reader["PickupStatus"], reader["OngoingDelivery"] ,reader["DeliveryStatus"]);
-            }
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
 
-            reader.Close();
-            connection.Close();
+                SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo", connection);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                dataGridView1.Rows.Clear();
+
+                while (reader.Read())
+                {
+                    dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["ConfirmOrder"], reader["PickupStatus"], reader["OngoingDelivery"], reader["DeliveryStatus"]);
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
         }
 
         private void PendingDeliveries_Load(object sender, EventArgs e)

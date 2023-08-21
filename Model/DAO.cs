@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using CMB_Delivery_Management.Converters;
+using System.Windows.Forms;
 
 namespace CMB_Delivery_Management.Model
 {
@@ -21,7 +22,7 @@ namespace CMB_Delivery_Management.Model
             try
             {
                 SqlConnection Connection;
-                
+
                 using (Connection = new SqlConnection(ConnectionString))
                 {
                     String ValidationQueury = "";
@@ -36,20 +37,20 @@ namespace CMB_Delivery_Management.Model
                     }
 
                     if (Connection.State == System.Data.ConnectionState.Closed)
-                    Connection.Open();
+                        Connection.Open();
                     SqlCommand ValidationCommand = new SqlCommand(ValidationQueury, Connection);
                     ValidationCommand.Parameters.AddWithValue("@uname", username);
 
 
                     SqlDataReader ValidationData = ValidationCommand.ExecuteReader();
 
-                    if (!ValidationData.HasRows) 
+                    if (!ValidationData.HasRows)
                     {
                         if (Connection.State == System.Data.ConnectionState.Open)
                         {
                             Connection.Close();
                         }
-                        return false; 
+                        return false;
                     }
 
                     while (ValidationData.Read())
@@ -93,7 +94,7 @@ namespace CMB_Delivery_Management.Model
 
                                 return true;
                             }
-                        }   
+                        }
 
                         if (Connection.State == System.Data.ConnectionState.Open)
                         {
@@ -108,6 +109,9 @@ namespace CMB_Delivery_Management.Model
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.ToString());
+
+                // Handle the Exception
+                MessageBox.Show($"Error: {ex.Message}", "Error");
             }
 
             return false;
