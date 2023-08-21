@@ -65,6 +65,7 @@
             this.button3.TabIndex = 12;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -73,7 +74,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(164, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 40);
+            this.label1.Size = new System.Drawing.Size(245, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Update Driver ";
             // 
@@ -88,6 +89,7 @@
             this.button2.TabIndex = 22;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 

@@ -71,7 +71,7 @@ namespace CMB_Delivery_Management
 
             while (reader.Read())
             {
-                dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["PickupStatus"], reader["DeliveryStatus"]);
+                dataGridView1.Rows.Add(reader["DeliveryID"], reader["DriverID"], reader["Address"], reader["Contact"], reader["Description"], reader["ConfirmOrder"], reader["PickupStatus"], reader["OngoingDelivery"] ,reader["DeliveryStatus"]);
             }
 
             reader.Close();

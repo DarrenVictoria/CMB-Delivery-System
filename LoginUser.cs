@@ -28,7 +28,7 @@ namespace CMB_Delivery_Management
             var isValidUser = DAO.VerifyUser(uname, password, AccountType.Driver);
             if (isValidUser)
             {
-                Driverdelivery objdriverdashboard = new Driverdelivery();
+                Driverdelivery objdriverdashboard = new Driverdelivery(uname);
                 objdriverdashboard.Show();
                 this.Hide();
             }
