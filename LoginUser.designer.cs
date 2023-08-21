@@ -46,7 +46,7 @@
             this.b_forgotpassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.b_forgotpassword.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.b_forgotpassword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.b_forgotpassword.Location = new System.Drawing.Point(306, 429);
+            this.b_forgotpassword.Location = new System.Drawing.Point(327, 420);
             this.b_forgotpassword.Name = "b_forgotpassword";
             this.b_forgotpassword.Size = new System.Drawing.Size(195, 41);
             this.b_forgotpassword.TabIndex = 23;
@@ -57,7 +57,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(47, 280);
+            this.label3.Location = new System.Drawing.Point(66, 280);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(88, 21);
             this.label3.TabIndex = 22;
@@ -66,7 +66,7 @@
             // tb_password
             // 
             this.tb_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_password.Location = new System.Drawing.Point(50, 303);
+            this.tb_password.Location = new System.Drawing.Point(71, 304);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.Size = new System.Drawing.Size(451, 22);
@@ -76,7 +76,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 216);
+            this.label4.Location = new System.Drawing.Point(66, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 21);
             this.label4.TabIndex = 20;
@@ -86,7 +86,7 @@
             // 
             this.cb_rememberme.AutoSize = true;
             this.cb_rememberme.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_rememberme.Location = new System.Drawing.Point(51, 439);
+            this.cb_rememberme.Location = new System.Drawing.Point(71, 429);
             this.cb_rememberme.Name = "cb_rememberme";
             this.cb_rememberme.Size = new System.Drawing.Size(153, 25);
             this.cb_rememberme.TabIndex = 19;
@@ -96,7 +96,7 @@
             // tb_username
             // 
             this.tb_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_username.Location = new System.Drawing.Point(49, 239);
+            this.tb_username.Location = new System.Drawing.Point(70, 240);
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(452, 22);
             this.tb_username.TabIndex = 18;
@@ -122,9 +122,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(250, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 37);
+            this.label2.Size = new System.Drawing.Size(101, 37);
             this.label2.TabIndex = 16;
-            this.label2.Text = "User";
+            this.label2.Text = "Driver";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -141,7 +141,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 642);
+            this.ClientSize = new System.Drawing.Size(610, 642);
             this.Controls.Add(this.b_forgotpassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_password);

@@ -45,7 +45,7 @@ namespace CMB_Delivery_Management
             Address.Text = "";
             Baggage.Text = "";
             contact.Text = "";
-        
+            comboBox1.Text = "";    
             description.Text = "";
             status.Text = "STATUS : PENDING";
             status.BackColor = Color.RoyalBlue;

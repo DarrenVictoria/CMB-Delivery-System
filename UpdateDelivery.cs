@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CMB_Delivery_Management
 {
@@ -162,6 +163,16 @@ namespace CMB_Delivery_Management
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Address.Text = "";
+            Baggage.Text = "";
+            contact.Text = "";
+
+            description.Text = "";
+            
         }
     }
 }
