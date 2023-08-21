@@ -63,9 +63,11 @@ namespace CMB_Delivery_Management
 
         private bool CheckDeliveryExists(string BaggageId)
         {
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            
+            try
+            {
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+
+
                 connection.Open();
 
                 string query = $"SELECT COUNT(*) FROM DeliveryInfo WHERE deliveryid = '{BaggageId}'";
@@ -73,53 +75,65 @@ namespace CMB_Delivery_Management
 
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error");
+            }
+            return false;
         }
 
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string BaggageId = Baggage.Text;
-
-            bool deliveryExists = CheckDeliveryExists(BaggageId);
-
-            if (deliveryExists)
+            try
             {
-                MessageBox.Show("A driver with the same ID already exists.");
-                return;
+                string BaggageId = Baggage.Text;
+
+                bool deliveryExists = CheckDeliveryExists(BaggageId);
+
+                if (deliveryExists)
+                {
+                    MessageBox.Show("A driver with the same ID already exists.");
+                    return;
+                }
+
+
+
+                string Add = Address.Text;
+                int ContactNo = int.Parse(contact.Text);
+                string Desc = description.Text;
+                int DriverId = int.Parse(comboBox1.Text);
+
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+
+                connection.Open();
+
+
+                string query = $"INSERT INTO DeliveryInfo (DeliveryID,DriverID,Address,Contact,Description) VALUES ('{BaggageId}','{DriverId}' ,'{Add}','{ContactNo}','{Desc}')";
+                SqlCommand command = new SqlCommand(query, connection);
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("New Delivery added successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Insertion failed.");
+                }
+
+                connection.Close();
+
+
+                status.ForeColor = Color.Black;
+                status.BackColor = Color.DarkSeaGreen;
+                status.Text = "STATUS : SUBMITTED";
             }
-
-
-            
-            string Add = Address.Text;
-            int ContactNo = int.Parse(contact.Text);
-            string Desc = description.Text;
-            int DriverId = int.Parse(comboBox1.Text);
-
-            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
-            
-            connection.Open();
-
-
-            string query = $"INSERT INTO DeliveryInfo (DeliveryID,DriverID,Address,Contact,Description) VALUES ('{BaggageId}','{DriverId}' ,'{Add}','{ContactNo}','{Desc}')";
-            SqlCommand command = new SqlCommand(query, connection);
-
-            int rowsAffected = command.ExecuteNonQuery();
-            if (rowsAffected > 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("New Delivery added successfully.");
+                MessageBox.Show($"Error: {ex.Message}", "Error");
             }
-            else
-            {
-                MessageBox.Show("Insertion failed.");
-            }
-
-            connection.Close();
-        
-
-            status.ForeColor = Color.Black;
-            status.BackColor = Color.DarkSeaGreen;
-            status.Text = "STATUS : SUBMITTED";
 
         }
 
