@@ -54,7 +54,7 @@
             this.label1.Size = new System.Drawing.Size(179, 37);
             this.label1.TabIndex = 0;
             this.label1.Text = "Add Driver ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // panel1
             // 
@@ -192,7 +192,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddDriver";
             this.Text = "AddDriver";
-            this.Load += new System.EventHandler(this.AddDriver_Load);
+            
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

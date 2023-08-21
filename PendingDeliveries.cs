@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,10 +19,7 @@ namespace CMB_Delivery_Management
             InitializeComponent();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -30,15 +28,8 @@ namespace CMB_Delivery_Management
             this.Hide();
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
+  
 
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -54,14 +45,12 @@ namespace CMB_Delivery_Management
             this.Hide();
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void LoadDeliveryData()
         {
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo", connection);
 
             connection.Open();
@@ -110,7 +99,8 @@ namespace CMB_Delivery_Management
 
         private void DeleteDriverFromDatabase(string deliveryId)
         {
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             try
             {
                 connection.Open();
@@ -144,11 +134,7 @@ namespace CMB_Delivery_Management
             DeleteSelectedRow();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+ 
         private void button4_Click(object sender, EventArgs e)
         {
             UpdateDelivery objupdatedelivery = new UpdateDelivery();
@@ -157,6 +143,13 @@ namespace CMB_Delivery_Management
             //Debug.WriteLine(DriverId);
             objupdatedelivery.SelectDelivery(int.Parse(DeliveryId));
             objupdatedelivery.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DeliveryForm form = new DeliveryForm();
+            form.Show();
+            this.Hide();
         }
     }
 }

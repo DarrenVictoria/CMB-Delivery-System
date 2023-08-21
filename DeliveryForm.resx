@@ -166,19 +166,6 @@
   <metadata name="colorDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="button6.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAbVJREFUSEvt
-        1UsrRVEYxvFDDGSijMhAuWUolIEZA2OKlBKFGPEFKHN8AoxISRlQyuUDoEwlMwO5DoSB+/9x9qplZV+O
-        szep89Svzjm1Lmftd683lctfphyN6Y+/lyo84x2H6EIeEk81tKjtGAMoQKI5h7u4nGEcRUgky9BCj5jB
-        g/fduMYkShBrRmAWqYUWmIIWtDdwj1mUIZbUwUw+pB+86IgnoCO3N/CEeag+ss4NNOnS57evKcQgVHT2
-        Bl6xhgb8OCvQZJfwmygf3TiCvQHZQjsyzhjsiTbRBL9okV3YY2QfnYh8F9TDnUS20QK/aHPrcMfpsfQh
-        Ui7gTmCEbUAFuogX2ON6EJqghffQCr/UYAHm+jV6ERi/o95A0D9VIa7iDfa4U/QjNKOwB4YVVxt2YI+R
-        A6i49AZEinmdruD3OqlS1b3UxdwFVeEdyDi30AS6t92oS6lb+V0gQScTGPv5DusHL7oy1Z2+uzJVSKrk
-        rGI/37AmMYcKxBLzfO+g7uO2Rd3j0yhFrDHP16UjVncqRuzRi+8ueAJ1I3WlxFIJc9uo66j7RH4Hs42q
-        szn9MZd/n1TqA/1cvjfsbsV2AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAALdJREFUSEvt

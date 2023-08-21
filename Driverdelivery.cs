@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,55 +24,20 @@ namespace CMB_Delivery_Management
         }
 
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.label8.BackColor = Color.LightGreen;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.label8.BackColor = Color.Yellow;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.label8.BackColor = Color.Red;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        
 
         public static implicit operator Driverdelivery(Dashboard v)
         {
             throw new NotImplementedException();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
         public void LoadDeliveryData(string driverusername)
         {
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             SqlCommand command = new SqlCommand("SELECT * FROM DeliveryInfo WHERE DriverID = (SELECT DriverID FROM Driver WHERE username = @username)", connection);
             command.Parameters.AddWithValue("@username", driverusername);
 
@@ -112,6 +78,13 @@ namespace CMB_Delivery_Management
                 detailsForm.Show();
                 this.Close();
             }
+        }
+
+        private void DriverLogout_Click(object sender, EventArgs e)
+        {
+            LoginUser objLogOutUser= new LoginUser();
+            objLogOutUser.Show();
+            this.Hide();
         }
     }
 }

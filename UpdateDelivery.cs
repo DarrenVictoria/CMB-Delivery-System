@@ -30,7 +30,7 @@ namespace CMB_Delivery_Management
             {
                 connection.Open();
 
-                //string query = "SELECT * FROM DeliveryInfo WHERE DeliveryID = @DeliveryId";
+               
                 string query = "SELECT DeliveryID,DriverID,Address,Contact,Description FROM DeliveryInfo WHERE DeliveryID = @DeliveryId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@DeliveryId", DeliveryID);
@@ -64,6 +64,29 @@ namespace CMB_Delivery_Management
 
         }
 
+        private void PopulateDriverComboBox()
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                string query = "SELECT DriverID FROM DriverCred";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader["DriverID"].ToString());
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void UpdateDeliveryFromDatabase()
         {
 
@@ -79,11 +102,12 @@ namespace CMB_Delivery_Management
             {
                 connection.Open();
 
-                //string query = "UPDATE DriverCred SET DriverId = {driverid}, Driver_name = {drivername}, Driver_DateJoined = {EmployementDate} , Driver_age = {driverAge} WHERE DriverId = @DriverId";
-                string query = "UPDATE DeliveryInfo SET DeliveryID = @deliveryId, Address = @address, Contact = @contact, Description = @Description WHERE DeliveryID= @deliveryId";
+               
+                string query = "UPDATE DeliveryInfo SET DeliveryID = @deliveryId,DriverID = @driverid ,Address = @address, Contact = @contact, Description = @Description WHERE DeliveryID= @deliveryId";
                 SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.AddWithValue("@deliveryId", deliveryId);
+                command.Parameters.AddWithValue("@driverid", comboBox1.Text);
                 command.Parameters.AddWithValue("@address", address);
                 command.Parameters.AddWithValue("@contact", Contact);
                 command.Parameters.AddWithValue("@Description", Description);
@@ -113,18 +137,13 @@ namespace CMB_Delivery_Management
             UpdateDeliveryFromDatabase();
         }
 
-        private void Baggage_TextChanged(object sender, EventArgs e)
-        {
+    
 
-        }
-
-        private void Header_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void UpdateDelivery_Load(object sender, EventArgs e)
         {
+            PopulateDriverComboBox();
+
             if (SelectedDelivery == null)
             {
                 this.Hide();
@@ -139,10 +158,6 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

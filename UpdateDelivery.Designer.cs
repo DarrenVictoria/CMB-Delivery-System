@@ -33,7 +33,6 @@
             this.status = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.tempbox = new System.Windows.Forms.TextBox();
             this.contact = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
             this.Baggage = new System.Windows.Forms.TextBox();
@@ -45,7 +44,6 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.Header = new System.Windows.Forms.Label();
             this.description = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +53,6 @@
             this.comboBox1.AllowDrop = true;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Yvan Thrimawithana",
-            "Monkey Man",
-            "Donkey Man"});
             this.comboBox1.Location = new System.Drawing.Point(174, 178);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 31);
@@ -104,15 +98,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // tempbox
-            // 
-            this.tempbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tempbox.Location = new System.Drawing.Point(392, 310);
-            this.tempbox.Multiline = true;
-            this.tempbox.Name = "tempbox";
-            this.tempbox.Size = new System.Drawing.Size(448, 42);
-            this.tempbox.TabIndex = 46;
-            // 
             // contact
             // 
             this.contact.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -140,7 +125,7 @@
             this.Baggage.Name = "Baggage";
             this.Baggage.Size = new System.Drawing.Size(188, 42);
             this.Baggage.TabIndex = 43;
-            this.Baggage.TextChanged += new System.EventHandler(this.Baggage_TextChanged);
+           
             // 
             // label6
             // 
@@ -174,7 +159,7 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Description";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // label2
             // 
@@ -210,7 +195,7 @@
             this.Header.TabIndex = 36;
             this.Header.Text = "DELIVERY FORM";
             this.Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Header.Click += new System.EventHandler(this.Header_Click);
+            
             // 
             // description
             // 
@@ -221,19 +206,6 @@
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(448, 232);
             this.description.TabIndex = 39;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(781, 311);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 40);
-            this.button6.TabIndex = 51;
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -253,12 +225,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 541);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.status);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.tempbox);
             this.Controls.Add(this.contact);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.Baggage);
@@ -282,12 +252,10 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label status;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox tempbox;
         private System.Windows.Forms.TextBox contact;
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.TextBox Baggage;

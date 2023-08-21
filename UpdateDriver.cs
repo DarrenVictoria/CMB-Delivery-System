@@ -88,13 +88,13 @@ namespace CMB_Delivery_Management
             string EmployementDate = Driver_DateJoined.Text.Trim();
             int driverAge = int.Parse(DriverAge.Text.Trim());
 
-
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             try
             {
                 connection.Open();
 
-                //string query = "UPDATE DriverCred SET DriverId = {driverid}, Driver_name = {drivername}, Driver_DateJoined = {EmployementDate} , Driver_age = {driverAge} WHERE DriverId = @DriverId";
+                
                 string query = "UPDATE DriverCred SET Driver_name = @DriverName, Driver_DateJoined = @EmploymentDate, Driver_age = @DriverAge WHERE DriverId = @DriverId";
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@DriverId", driverId);
