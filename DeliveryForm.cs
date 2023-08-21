@@ -20,118 +20,36 @@ namespace CMB_Delivery_Management
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void DeliveryForm_Load(object sender, EventArgs e)
         {
-
+            PopulateDriverComboBox();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-                    }
-
-        private void textBox9_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox7_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox10_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
+        
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Close();
         }
 
-        private void textBox3_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void button5_Click(object sender, EventArgs e)
         {
             Address.Text = "";
             Baggage.Text = "";
             contact.Text = "";
-            tempbox.Text = "";
+        
             description.Text = "";
             status.Text = "STATUS : PENDING";
             status.BackColor = Color.RoyalBlue;
-            
-
-            
-           
+       
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -142,16 +60,12 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void contact_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private bool CheckDeliveryExists(string BaggageId)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True"))
-            {
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
+            
                 connection.Open();
 
                 string query = $"SELECT COUNT(*) FROM DeliveryInfo WHERE deliveryid = '{BaggageId}'";
@@ -159,7 +73,7 @@ namespace CMB_Delivery_Management
 
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
-            }
+            
         }
 
 
@@ -180,9 +94,10 @@ namespace CMB_Delivery_Management
             string Add = Address.Text;
             int ContactNo = int.Parse(contact.Text);
             string Desc = description.Text;
-            int DriverId = 7;
+            int DriverId = int.Parse(comboBox1.Text);
 
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             connection.Open();
 
 
@@ -208,36 +123,43 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void PopulateDriverComboBox()
         {
+            try
+            {
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                string query = "SELECT DriverID FROM DriverCred";
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
 
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBox1.Items.Add(reader["DriverID"].ToString());
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            description.Text = tempbox.Text;
-        }
-
-        private void textBox5_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-       
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
         
-            
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PendingDeliveries objPdeliveries = new PendingDeliveries();
+            objPdeliveries.Show();
+            this.Hide();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+            Drivers objdriverpage = new Drivers();
+            objdriverpage.Show();
+            this.Hide();
         }
     }
 }

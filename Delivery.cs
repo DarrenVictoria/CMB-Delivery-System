@@ -25,16 +25,12 @@ namespace CMB_Delivery_Management
             this.SelecedtedDeliveryId = SelecedtedDeliveryId;
             this.Selecteddriverusername = SelectedDriverUname;
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
             orderid.Text = SelecedtedDeliveryId.ToString();
 
-            using (SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True"))
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             {
                 connection.Open();
 
@@ -50,32 +46,7 @@ namespace CMB_Delivery_Management
                         string deliveryStatus = reader["DeliveryStatus"].ToString();
                         string confirmorder = reader["ConfirmOrder"].ToString();
                         string ongoingdelivery = reader["OngoingDelivery"].ToString();
-                        /*
-                        if (confirmorder == "Confirmed" && pickupStatus == "BaggagePickedUp" && ongoingdelivery == "Ongoing" && deliveryStatus == "Successful")
-                        {
-                            progressBar1.Value = progressBar1.Maximum;
-                        }
-                        else if (confirmorder == "Confirmed")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.25);
-                        }
-                        else if (pickupStatus == "BaggagePickedUp")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.50);
-                        }
-                        else if (ongoingdelivery == "Ongoing")
-                        {
-                            progressBar1.Value = (int)(progressBar1.Maximum * 0.75);
-                        }
-                        else if (deliveryStatus == "Successful")
-                        {
-                            progressBar1.Value = progressBar1.Maximum;
-                        }
-                        else
-                        {
-                            progressBar1.Value = 0; // Default value
-                        }
-                        */
+                        
                         if(deliveryStatus == "Successfull")
                         {
                             progressBar1.Value = progressBar1.Maximum;
@@ -94,53 +65,13 @@ namespace CMB_Delivery_Management
                         }
                         else
                         {
-                            progressBar1.Value = 0; // Default value
+                            progressBar1.Value = 0; 
                         }
                     }
                 }
 
                 connection.Close();
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lable3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         
@@ -151,8 +82,8 @@ namespace CMB_Delivery_Management
             int progressBarValue = (int)(progressBar1.Maximum * 0.25);     
             // Set the progress bar value
             progressBar1.Value = progressBarValue;
-
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             string updateStatus = "UPDATE DeliveryInfo SET ConfirmOrder = 'Confirmed' WHERE DeliveryId = @DeliveryId";
             SqlCommand command = new SqlCommand(updateStatus, connection);
             command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
@@ -177,8 +108,8 @@ namespace CMB_Delivery_Management
             int progressBarValue = (int)(progressBar1.Maximum * 0.50);
             // Set the progress bar value
             progressBar1.Value = progressBarValue;
-
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             string updateStatus = "UPDATE DeliveryInfo SET PickupStatus = 'Baggage Picked Up' WHERE DeliveryId = @DeliveryId";
             SqlCommand command = new SqlCommand(updateStatus, connection);
             command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
@@ -203,8 +134,8 @@ namespace CMB_Delivery_Management
             int progressBarValue = (int)(progressBar1.Maximum * 0.75);
             // Set the progress bar value
             progressBar1.Value = progressBarValue;
-
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+           
             string updateStatus = "UPDATE DeliveryInfo SET OngoingDelivery = 'Ongoing' WHERE DeliveryId = @DeliveryId";
             SqlCommand command = new SqlCommand(updateStatus, connection);
             command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
@@ -228,8 +159,8 @@ namespace CMB_Delivery_Management
             // Set the progress bar value
             progressBar1.Value = progressBarValue;
 
-
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             string updateStatus = "UPDATE DeliveryInfo SET DeliveryStatus = 'Successfull' WHERE DeliveryId = @DeliveryId";
             SqlCommand command = new SqlCommand(updateStatus, connection);
             command.Parameters.AddWithValue("@DeliveryId", SelecedtedDeliveryId);
@@ -253,6 +184,13 @@ namespace CMB_Delivery_Management
             objdriver.Show();
             this.Hide();
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Driverdelivery objdriver = new Driverdelivery(Selecteddriverusername);
+            objdriver.Show();
+            this.Hide();
         }
     }
 }

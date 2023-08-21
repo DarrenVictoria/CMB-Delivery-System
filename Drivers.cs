@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMB_Delivery_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,7 @@ namespace CMB_Delivery_Management
 
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+       
 
         private void panel6_Click(object sender, EventArgs e)
         {
@@ -33,10 +31,7 @@ namespace CMB_Delivery_Management
             this.Close();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-                 
-        }
+      
 
         private void Panel_MouseEnter(object sender, EventArgs e)
         {
@@ -56,11 +51,7 @@ namespace CMB_Delivery_Management
             }
         }
 
-        private void label15_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             Panel panel = (Panel)sender;
@@ -74,11 +65,7 @@ namespace CMB_Delivery_Management
             }
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+       
         private void Drivers_Load(object sender, EventArgs e)
         {
             LoadDriverData();
@@ -86,7 +73,8 @@ namespace CMB_Delivery_Management
 
         private void LoadDriverData()
         {
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             SqlCommand command = new SqlCommand("SELECT * FROM DriverCred", connection);
 
             connection.Open();
@@ -141,7 +129,8 @@ namespace CMB_Delivery_Management
 
         private void DeleteDriverFromDatabase(string driverId)
         {
-            SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+            
             try
             {
                 connection.Open();
@@ -175,10 +164,7 @@ namespace CMB_Delivery_Management
             DeleteSelectedRow();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -189,6 +175,20 @@ namespace CMB_Delivery_Management
             //Debug.WriteLine(DriverId);
             objupdatedr.SelectDriver(int.Parse(DriverId));
             objupdatedr.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PendingDeliveries objPdeliveries = new PendingDeliveries();
+            objPdeliveries.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Drivers objdriverpage = new Drivers();
+            objdriverpage.Show();
+            this.Hide();
         }
     }
 }

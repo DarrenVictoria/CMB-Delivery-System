@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeliveryForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Header = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,19 +47,11 @@
             this.Baggage = new System.Windows.Forms.TextBox();
             this.Address = new System.Windows.Forms.TextBox();
             this.contact = new System.Windows.Forms.TextBox();
-            this.tempbox = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.status = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +71,93 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(312, 555);
             this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(43, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(236, 39);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Management";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(43, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(146, 39);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Delivery";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(43, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 39);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "CMB";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button4
+            // 
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(-3, 356);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(315, 67);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Drivers";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 283);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(312, 67);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Deliveries";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 210);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(312, 67);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Dashboard";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Header
             // 
@@ -87,7 +171,7 @@
             this.Header.TabIndex = 4;
             this.Header.Text = "DELIVERY FORM";
             this.Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Header.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // label1
             // 
@@ -99,7 +183,7 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Baggage ID : ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click_2);
+            
             // 
             // label2
             // 
@@ -111,7 +195,7 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Driver ID : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+          
             // 
             // description
             // 
@@ -122,7 +206,7 @@
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(448, 232);
             this.description.TabIndex = 17;
-            this.description.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
+           
             // 
             // label3
             // 
@@ -145,7 +229,7 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Contact No :  ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+           
             // 
             // label6
             // 
@@ -166,7 +250,7 @@
             this.Baggage.Name = "Baggage";
             this.Baggage.Size = new System.Drawing.Size(196, 42);
             this.Baggage.TabIndex = 22;
-            this.Baggage.TextChanged += new System.EventHandler(this.textBox3_TextChanged_1);
+            
             // 
             // Address
             // 
@@ -186,17 +270,7 @@
             this.contact.Name = "contact";
             this.contact.Size = new System.Drawing.Size(196, 42);
             this.contact.TabIndex = 24;
-            this.contact.TextChanged += new System.EventHandler(this.contact_TextChanged);
-            // 
-            // tempbox
-            // 
-            this.tempbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tempbox.Location = new System.Drawing.Point(709, 310);
-            this.tempbox.Multiline = true;
-            this.tempbox.Name = "tempbox";
-            this.tempbox.Size = new System.Drawing.Size(448, 42);
-            this.tempbox.TabIndex = 25;
-            this.tempbox.TextChanged += new System.EventHandler(this.textBox5_TextChanged_1);
+           
             // 
             // button3
             // 
@@ -237,73 +311,19 @@
             this.status.TabIndex = 32;
             this.status.Text = "PENDING ";
             this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.status.Click += new System.EventHandler(this.label9_Click);
+         
             // 
             // comboBox1
             // 
             this.comboBox1.AllowDrop = true;
             this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Yvan Thrimawithana",
-            "Monkey Man",
-            "Donkey Man"});
             this.comboBox1.Location = new System.Drawing.Point(491, 178);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(196, 31);
             this.comboBox1.TabIndex = 34;
             this.comboBox1.Text = "Select Driver";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(43, 112);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(240, 40);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Management";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(43, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 40);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Delivery";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(43, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 40);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "CMB";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(1098, 311);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(57, 40);
-            this.button6.TabIndex = 33;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            
             // 
             // pictureBox1
             // 
@@ -317,67 +337,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // button4
-            // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-3, 356);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(315, 67);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Drivers";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 283);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(312, 67);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Deliveries";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 210);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(312, 67);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Dashboard";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // DeliveryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1186, 555);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.status);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.tempbox);
             this.Controls.Add(this.contact);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.Baggage);
@@ -418,12 +387,10 @@
         private System.Windows.Forms.TextBox Baggage;
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.TextBox contact;
-        private System.Windows.Forms.TextBox tempbox;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label status;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

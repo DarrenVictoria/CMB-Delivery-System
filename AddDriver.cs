@@ -19,16 +19,6 @@ namespace CMB_Delivery_Management
             InitializeComponent();
         }
 
-        private void AddDriver_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,7 +31,8 @@ namespace CMB_Delivery_Management
 
         private bool CheckDriverExists(string driverId)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True"))
+
+            SqlConnection connection = new SqlConnection(DAO.ConnectionString);
             {
                 connection.Open();
 
@@ -70,10 +61,10 @@ namespace CMB_Delivery_Management
 
             string DName = DriverName.Text; 
                 string Date = Driver_DateJoined.Text;
-                string Age = DriverAge.Text;    
-                
+                string Age = DriverAge.Text;
 
-                SqlConnection connection = new SqlConnection("Data Source=TOASTER1\\MSSQLSERVER05;Initial Catalog=BaggageDeliverySystem;Integrated Security=True");
+                SqlConnection connection = new SqlConnection(DAO.ConnectionString);
+                
                 connection.Open();
 
                 

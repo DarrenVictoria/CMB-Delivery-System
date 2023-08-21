@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,10 +44,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.drivercount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.AddDelivery = new System.Windows.Forms.Button();
-            this.ViewDelivery = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DeliveryStatusChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
@@ -72,7 +71,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
             this.panel1.Size = new System.Drawing.Size(312, 653);
             this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            
             // 
             // label8
             // 
@@ -81,7 +80,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(31, 110);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(240, 40);
+            this.label8.Size = new System.Drawing.Size(236, 39);
             this.label8.TabIndex = 6;
             this.label8.Text = "Management";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,7 +92,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(31, 70);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 40);
+            this.label7.Size = new System.Drawing.Size(146, 39);
             this.label7.TabIndex = 5;
             this.label7.Text = "Delivery";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,11 +104,11 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(31, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 40);
+            this.label5.Size = new System.Drawing.Size(92, 39);
             this.label5.TabIndex = 4;
             this.label5.Text = "CMB";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            
             // 
             // button4
             // 
@@ -143,6 +142,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Deliveries";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -169,7 +169,7 @@
             this.label6.Size = new System.Drawing.Size(163, 34);
             this.label6.TabIndex = 7;
             this.label6.Text = "Dashboard";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+           
             // 
             // DashboardLogOut
             // 
@@ -192,7 +192,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.label1);
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(372, 127);
+            this.panel3.Location = new System.Drawing.Point(372, 110);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(254, 117);
             this.panel3.TabIndex = 9;
@@ -208,6 +208,7 @@
             this.label2.Size = new System.Drawing.Size(40, 44);
             this.label2.TabIndex = 3;
             this.label2.Text = "0";
+           
             // 
             // label1
             // 
@@ -222,7 +223,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.drivercount);
             this.panel4.Controls.Add(this.label4);
             this.panel4.ForeColor = System.Drawing.Color.White;
             this.panel4.Location = new System.Drawing.Point(372, 356);
@@ -230,27 +231,27 @@
             this.panel4.Size = new System.Drawing.Size(254, 132);
             this.panel4.TabIndex = 10;
             // 
-            // label3
+            // drivercount
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(101, 64);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 44);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "0";
+            this.drivercount.AutoSize = true;
+            this.drivercount.BackColor = System.Drawing.Color.RoyalBlue;
+            this.drivercount.Font = new System.Drawing.Font("Century Gothic", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drivercount.ForeColor = System.Drawing.Color.White;
+            this.drivercount.Location = new System.Drawing.Point(101, 64);
+            this.drivercount.Name = "drivercount";
+            this.drivercount.Size = new System.Drawing.Size(40, 44);
+            this.drivercount.TabIndex = 3;
+            this.drivercount.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 17);
+            this.label4.Location = new System.Drawing.Point(56, 13);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(177, 30);
+            this.label4.Size = new System.Drawing.Size(156, 30);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Active Drivers";
+            this.label4.Text = "Total Drivers";
             // 
             // AddDelivery
             // 
@@ -259,28 +260,13 @@
             this.AddDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddDelivery.ForeColor = System.Drawing.Color.White;
-            this.AddDelivery.Location = new System.Drawing.Point(372, 270);
+            this.AddDelivery.Location = new System.Drawing.Point(404, 272);
             this.AddDelivery.Name = "AddDelivery";
             this.AddDelivery.Size = new System.Drawing.Size(180, 44);
             this.AddDelivery.TabIndex = 11;
             this.AddDelivery.Text = "Add delivery";
             this.AddDelivery.UseVisualStyleBackColor = false;
             this.AddDelivery.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // ViewDelivery
-            // 
-            this.ViewDelivery.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ViewDelivery.FlatAppearance.BorderSize = 0;
-            this.ViewDelivery.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ViewDelivery.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewDelivery.ForeColor = System.Drawing.Color.White;
-            this.ViewDelivery.Location = new System.Drawing.Point(372, 519);
-            this.ViewDelivery.Name = "ViewDelivery";
-            this.ViewDelivery.Size = new System.Drawing.Size(180, 44);
-            this.ViewDelivery.TabIndex = 12;
-            this.ViewDelivery.Text = "View deliveries\r\n";
-            this.ViewDelivery.UseVisualStyleBackColor = false;
-            this.ViewDelivery.Click += new System.EventHandler(this.ViewDelivery_Click);
             // 
             // panel2
             // 
@@ -292,21 +278,21 @@
             // 
             // DeliveryStatusChart
             // 
-            chartArea6.Name = "ChartArea1";
-            this.DeliveryStatusChart.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.DeliveryStatusChart.Legends.Add(legend6);
+            chartArea3.Name = "ChartArea1";
+            this.DeliveryStatusChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.DeliveryStatusChart.Legends.Add(legend3);
             this.DeliveryStatusChart.Location = new System.Drawing.Point(0, 0);
             this.DeliveryStatusChart.Name = "DeliveryStatusChart";
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series6.Legend = "Legend1";
-            series6.Name = "DeliveryStatusChart";
-            this.DeliveryStatusChart.Series.Add(series6);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series3.Legend = "Legend1";
+            series3.Name = "DeliveryStatusChart";
+            this.DeliveryStatusChart.Series.Add(series3);
             this.DeliveryStatusChart.Size = new System.Drawing.Size(454, 481);
             this.DeliveryStatusChart.TabIndex = 0;
             this.DeliveryStatusChart.Text = "chart1";
-            this.DeliveryStatusChart.Click += new System.EventHandler(this.DeliveryStatusChart_Click);
+            
             // 
             // Dashboard
             // 
@@ -315,7 +301,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1182, 653);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.ViewDelivery);
             this.Controls.Add(this.AddDelivery);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -348,10 +333,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label drivercount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button AddDelivery;
-        private System.Windows.Forms.Button ViewDelivery;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
