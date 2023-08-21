@@ -16,7 +16,7 @@ namespace CMB_Delivery_Management
     public partial class UpdateDelivery : Form
     {
 
-        public Delivery SelectedDelivery { get; set; }
+        public Model.Delivery SelectedDelivery { get; set; }
 
         public UpdateDelivery()
         {
@@ -37,7 +37,7 @@ namespace CMB_Delivery_Management
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                SelectedDelivery = new Delivery();
+                SelectedDelivery = new Model.Delivery();
 
                 while (reader.Read())
                 {

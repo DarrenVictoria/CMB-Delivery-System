@@ -21,7 +21,7 @@ namespace CMB_Delivery_Management
         
         public UpdateDriver()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void UpdateDriver_Load(object sender, EventArgs e)
@@ -126,6 +126,19 @@ namespace CMB_Delivery_Management
         {
             UpdateDriverFromDatabase();
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DriverId.Text = "";
+            DriverName.Text = "";
+            Driver_DateJoined.Text = "";
+            DriverAge.Text = "";
         }
     }
 }
