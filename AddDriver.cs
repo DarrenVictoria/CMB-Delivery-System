@@ -26,7 +26,10 @@ namespace CMB_Delivery_Management
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close ();
+            DriverId.Text = "";
+            DriverName.Text = "";   
+            Driver_DateJoined.Text = "";
+            DriverAge.Text = "";    
         }
 
         private bool CheckDriverExists(string driverId)

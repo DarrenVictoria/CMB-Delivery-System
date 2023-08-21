@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateDelivery));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.status = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.contact = new System.Windows.Forms.TextBox();
@@ -59,20 +58,6 @@
             this.comboBox1.TabIndex = 52;
             this.comboBox1.Text = "Select Driver";
             // 
-            // status
-            // 
-            this.status.AllowDrop = true;
-            this.status.BackColor = System.Drawing.Color.RoyalBlue;
-            this.status.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.status.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.status.ForeColor = System.Drawing.Color.White;
-            this.status.Location = new System.Drawing.Point(274, 460);
-            this.status.Name = "status";
-            this.status.Size = new System.Drawing.Size(398, 63);
-            this.status.TabIndex = 50;
-            this.status.Text = "STATUS : PENDING ";
-            this.status.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Crimson;
@@ -84,6 +69,7 @@
             this.button5.TabIndex = 48;
             this.button5.Text = "Cancel";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -94,7 +80,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 50);
             this.button3.TabIndex = 47;
-            this.button3.Text = "Submit";
+            this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -125,7 +111,6 @@
             this.Baggage.Name = "Baggage";
             this.Baggage.Size = new System.Drawing.Size(188, 42);
             this.Baggage.TabIndex = 43;
-           
             // 
             // label6
             // 
@@ -159,7 +144,6 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "Description";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // label2
             // 
@@ -195,7 +179,6 @@
             this.Header.TabIndex = 36;
             this.Header.Text = "DELIVERY FORM";
             this.Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // description
             // 
@@ -225,7 +208,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 541);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.status);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
@@ -252,7 +234,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label status;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;

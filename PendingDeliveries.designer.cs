@@ -56,7 +56,7 @@ namespace CMB_Delivery_Management
             this.button3.BackColor = System.Drawing.Color.LimeGreen;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(194, 474);
+            this.button3.Location = new System.Drawing.Point(351, 474);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 36);
@@ -89,7 +89,7 @@ namespace CMB_Delivery_Management
             this.PickupName,
             this.Column1,
             this.DeliveryStName});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -165,7 +165,7 @@ namespace CMB_Delivery_Management
             this.button1.BackColor = System.Drawing.Color.RoyalBlue;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(42, 28);
+            this.button1.Location = new System.Drawing.Point(33, 28);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 36);
@@ -180,7 +180,7 @@ namespace CMB_Delivery_Management
             this.button2.BackColor = System.Drawing.Color.Crimson;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(452, 474);
+            this.button2.Location = new System.Drawing.Point(574, 474);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 36);
@@ -195,7 +195,7 @@ namespace CMB_Delivery_Management
             this.button4.BackColor = System.Drawing.Color.RoyalBlue;
             this.button4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(715, 474);
+            this.button4.Location = new System.Drawing.Point(786, 474);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 36);
@@ -208,7 +208,7 @@ namespace CMB_Delivery_Management
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1181, 12);
+            this.pictureBox7.Location = new System.Drawing.Point(1160, 12);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(46, 41);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
